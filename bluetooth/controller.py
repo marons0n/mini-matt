@@ -303,7 +303,8 @@ class BluetoothController(threading.Thread):
                 self._metadata = {
                     "Title": str(track_info.get('Title', 'No Track')),
                     "Artist": str(track_info.get('Artist', 'Unknown Artist')),
-                    "Album": str(track_info.get('Album', 'Unknown Album'))
+                    "Album": str(track_info.get('Album', 'Unknown Album')),
+                    "ArtUrl": str(track_info.get('mpris:artUrl', '')),
                 }
         except Exception as e:
             print(f"[BT_CTRL] Error getting player properties: {e}")
