@@ -64,6 +64,7 @@ class SidebarNavigation(BoxLayout):
             {'icon': '♪', 'page': 'music', 'label': 'Music'},
             {'icon': '🗺', 'page': 'maps', 'label': 'Maps'},
             {'icon': '❄', 'page': 'climate', 'label': 'Climate'},
+            {'icon': '🤖', 'page': 'mini-matt', 'label': 'mini-matt'},
             {'icon': '⚙', 'page': 'settings', 'label': 'Settings'}
         ]
         

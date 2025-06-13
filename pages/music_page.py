@@ -4,6 +4,7 @@ from kivy.uix.button import Button
 from kivy.uix.modalview import ModalView
 from kivy.uix.recycleview import RecycleView
 from kivy.uix.recycleview.views import RecycleDataViewBehavior
+from kivy.uix.image import AsyncImage
 from kivy.properties import BooleanProperty
 from kivy.clock import Clock
 from kivy.graphics import Color, Rectangle, RoundedRectangle
@@ -302,6 +303,15 @@ class MusicPage(BoxLayout):
             spacing=Theme.SPACING_MEDIUM,
             padding=[0, Theme.PADDING_LARGE, 0, Theme.PADDING_LARGE]
         )
+
+        # Cover art
+        self.cover_image = AsyncImage(
+            source='',
+            size_hint=(1, None),
+            height=220,
+            allow_stretch=True,
+        )
+        self.now_playing_layout.add_widget(self.cover_image)
         
         # Track info
         self.title_label = Label(
@@ -405,6 +415,7 @@ class MusicPage(BoxLayout):
         title = metadata.get('Title', '')
         artist = metadata.get('Artist', '')
         album = metadata.get('Album', '')
+        art = metadata.get('ArtUrl', '')
         
         if title and title not in ['No Track', '---', '']:
             self.title_label.text = title
@@ -414,6 +425,9 @@ class MusicPage(BoxLayout):
             self.title_label.text = "No track playing"
             self.artist_label.text = ""
             self.album_label.text = ""
+
+        if art:
+            self.cover_image.source = art
     
     def on_page_enter(self):
         """Called when page becomes active"""

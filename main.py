@@ -8,12 +8,13 @@ from pages.music_page import MusicPage
 from pages.maps_page import MapsPage
 from pages.climate_page import ClimatePage
 from pages.settings_page import SettingsPage
+from pages.mini_matt_page import MiniMattPage
 from ui.theme import Theme
 
 class CarDashboardApp(App):
     def build(self):
         # Configure window for car dashboard (vertical orientation)
-        Window.size = (800, 1280)  # Portrait orientation
+        Window.size = (640, 1024)  # 20% smaller portrait orientation
         Window.clearcolor = Theme.BACKGROUND_COLOR
         
         # Main layout
@@ -28,7 +29,8 @@ class CarDashboardApp(App):
             'music': MusicPage(),
             'maps': MapsPage(),
             'climate': ClimatePage(),
-            'settings': SettingsPage()
+            'settings': SettingsPage(),
+            'mini-matt': MiniMattPage(),
         }
         
         # Current page container
