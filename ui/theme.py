@@ -19,6 +19,8 @@ class Theme:
     SUCCESS_COLOR = (0.2, 0.7, 0.3, 1)
     WARNING_COLOR = (0.9, 0.6, 0.1, 1)
     ERROR_COLOR = (0.8, 0.2, 0.2, 1)
+    # Generic gray used for image placeholders
+    PLACEHOLDER_COLOR = (0.5, 0.5, 0.5, 1)
 
     # Active palette (defaults to light)
     BACKGROUND_COLOR = LIGHT_BACKGROUND
