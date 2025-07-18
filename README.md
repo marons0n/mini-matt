@@ -6,4 +6,4 @@ besides the core radio functionality (music, climate, maps, bluetooth)
 
 the core of the project is training and implementing a custom llm
 
-more to come
+
